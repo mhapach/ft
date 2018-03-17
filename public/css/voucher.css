@@ -1,0 +1,197 @@
+BODY {
+	font-family: "Arial";
+	font-size: 11px;
+	color: #000000;
+}
+
+A {
+	font-family: Arial;
+	color: #ff9900;
+}
+
+A:hover{color:#ff6600}
+
+A.copy {
+	font-size: 10px;
+	text-decoration: none;
+}
+
+A.m {
+	font-family: Arial Narrow;
+	font-size: 13px;
+	color: #333333;
+	text-decoration: none;
+	background : #ffffff;
+	padding : 0px 0px 0px 0px;
+	margin : 2px 2px;
+}
+
+A.m:hover {
+	color: #000000;
+	background : #ffe099;
+}
+
+A.mch {
+	font-family: Arial Narrow;
+	font-size: 13px;
+	color: #333333;
+	text-decoration: none;
+	background : #ff9900;
+	padding : 0px 12px 0px 12px;
+	margin :  2px 2px;
+}
+
+A.mch:hover {
+	color: #000000;
+	background : #ffe099;
+}
+
+P {
+	font-family: Arial Narrow;
+	font-size: 11px;
+}
+
+FONT.m {
+	font-family: Arial Narrow;
+	font-size: 13px;
+	color: #333333;
+	text-decoration: none;
+	background : #ffffff;
+	padding : 0px 12px 0px 12px;
+	margin :  2px 2px;
+}
+
+FONT {
+	font-family: Arial;
+}
+
+FONT.copy {
+	font-size: 10px;
+	text-decoration: none;
+	color: #000000;
+}
+
+H1 {
+	font-family: Arial Narrow;
+	font-size: 36px;
+	text-decoration: none;
+	color: #ff9900;
+	font-weight: normal;
+}
+
+H2 {
+	font-family: Arial Narrow;
+	font-size: 20px;
+	color: #ff9900;
+	font-weight: normal;
+	margin-top : 7px;
+	margin-bottom : 2px;
+}
+
+H3 {
+	font-family: Arial Narrow;
+	font-size: 16px;
+	color: #ff0000;
+	font-weight: normal;
+	line-height : 16px;
+	margin-top : 5px;
+	margin-bottom : 0px;
+}
+
+TD {
+	font-family: Arial;
+	font-size: 11px;
+}
+
+TR.hand {
+	cursor: hand;
+}
+
+OL {
+	font-family: Arial;
+	font-size: 11px;
+}
+
+UL {
+	font-family: Arial;
+	font-size: 11px;
+}
+
+INPUT {
+	font-family: Arial;
+	font-size: 10px;
+}
+
+SELECT {
+	font-family: Arial;
+	font-size: 10px;
+}
+
+
+
+
+.bordertable01 {
+	BORDER-RIGHT: black 1px solid; BORDER-TOP: black 1px solid; BORDER-LEFT: black 1px solid; BORDER-BOTTOM: black 1px solid
+}
+.fondologinheader {
+	FONT-WEIGHT: bold; FONT-STYLE: italic; PADDING-RIGHT: 4px; FONT-SIZE: 12px; COLOR: black; PADDING-TOP: 3px; PADDING-BOTTOM: 3px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #FF9900
+}
+.fondologin {
+	PADDING-RIGHT: 4px; FONT-SIZE: 9px; COLOR: black; PADDING-TOP: 5px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #FFC211
+}
+.fondologinbottom {
+	FONT-WEIGHT: bold; PADDING-LEFT: 12px;PADDING-RIGHT: 4px; FONT-SIZE: 10px; COLOR: black; PADDING-TOP: 3px; PADDING-BOTTOM: 3px; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #FF9900
+}
+
+
+.buttonlogin {
+   BORDER-RIGHT: #ffffff 1px solid; BORDER-TOP: #ffffff 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 9px; BORDER-LEFT: #ffffff 1px solid; CURSOR: hand; COLOR: #ffffff; BORDER-BOTTOM: #ffffff 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ff9900
+}
+.buttonprint {
+	BORDER-RIGHT: #ff9900 1px solid; BORDER-TOP: #ff9900 1px solid; FONT-WEIGHT: bold; FONT-SIZE: 9px; BORDER-LEFT: #ff9900 1px solid; CURSOR: hand; COLOR: #ff9900; BORDER-BOTTOM: #ff9900 1px solid; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; BACKGROUND-COLOR: #ffffff
+}
+
+.data {color: #000000; font-size: 10px; font-family: verdana, arial, helvetica, sans-serif; border: solid 1px #124982}
+.estandard01 {color: #000000; font-size: 11px; font-family: verdana, arial, helvetica, sans-serif}
+
+.td_submenu {
+	 BACKGROUND-POSITION: left center; PADDING-LEFT: 0px; FONT-WEIGHT: normal; FONT-SIZE: 10px; COLOR: white; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; WHITE-SPACE: nowrap; 
+}
+
+A.menu1:link {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.menu1:hover {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif; TEXT-DECORATION: none
+}
+A.menu1:active {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+A.menu1:visited {
+	FONT-WEIGHT: bold; FONT-SIZE: 10px; COLOR: black; FONT-FAMILY: Verdana, Arial, Helvetica, sans-serif
+}
+
+
+.titinfwhite {
+font-family: Verdana, Arial, Helvetica, sans-serif; font-weight:bold; font-size: 12px; color: #black; padding-bottom: 4px;
+}
+
+.tddesthome {
+	font-family: Verdana;
+	font-size: 9px;
+	color: #black;
+	background-color: #FF9900;
+	padding: 5px;
+}
+
+.textoblackbold {
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight:bold;
+	color: #333333;
+	text-align: justify;
+}
+
+.titdest2 {
+   font-family: Verdana, Arial, Helvetica, sans-serif; font-weight:bold; font-size: 16px; color: #FF9900; padding-bottom: 6px; 
+}

@@ -1,0 +1,141 @@
+<table width="75%" cellpadding="0" cellspacing="0" border="0">
+<form name="form1" method="post">
+<input type="Hidden" name="mode">
+<!--CITY_ID  = <TMPL_VAR NAME=CITY_ID>-->
+<tr>
+  <td width="50">&nbsp;</td>
+  <td>
+      <table border="0"  cellpadding="0" cellspacing="0">
+        <tr nowrap>
+          <td class="copy" width="60"><b>Country: </b> &nbsp;</td>
+          <td class="copy" align="left" width="130">
+            <select name="country_id" onchange="javascript:Change('country')">
+            <option value="0">Select Country</option>
+            <TMPL_LOOP NAME=COUNTRIES_LOOP>
+            <option value="<TMPL_VAR NAME=ID>" <TMPL_VAR NAME=SELECTED>><TMPL_VAR NAME=NAME></option>
+            </TMPL_LOOP>
+            </select>
+          </td>
+          <td class="copy">&nbsp; &nbsp;<b>Select: city </b> &nbsp;</td>
+          <td class="copy">
+            <select name="city_id" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>
+            <option value="0"> - All - </option>
+            <TMPL_LOOP NAME=CITIES_LOOP>
+            <option value="<TMPL_VAR NAME=ID>" <TMPL_VAR NAME=SELECTED>><TMPL_VAR NAME=NAME></option>
+            </TMPL_LOOP>
+            </select>
+          </td>
+          <td class="copy">&nbsp; &nbsp;<b>or resort </b> &nbsp;</td>
+          <td class="copy">
+            <select name="resort_id" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>
+            <option value="0"> - All - </option>
+            <TMPL_LOOP NAME=RESORTS_LOOP>
+            <option value="<TMPL_VAR NAME=ID>" <TMPL_VAR NAME=SELECTED>><TMPL_VAR NAME=NAME></option>
+            </TMPL_LOOP>
+            </select>
+          </td>
+        </tr>
+        </table>
+        <br>
+        <table border="0"  cellpadding="0" cellspacing="0">
+        <tr>
+          <td class="copy" align="left" width="60"><nobr><b>Arrival: &nbsp;&nbsp;</b></nobr></td>
+          <td class="copy" valign="top">
+            <input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type=text size=10 value="<TMPL_VAR NAME=CDATE_FROM>" name="cdateFrom" class="lemon" id="cdateFrom">&nbsp;&nbsp;
+          </td>
+          <td width="60" align="left">
+            <a href="#" onClick="cal.select(document.getElementById('cdateFrom'),'cdtf','dd-MM-yyyy'); return false;"><img src="/img/calendar.jpg" border=0 width="23" height="20"></a><a name="cdtf" id="cdtf"> </a>
+          </td>
+          <td><b>Nights: </b></td>
+          <td>
+           <select <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> name="nights" onchange="document.form1.cdateTo.value = NightsAdd(document.form1.cdateFrom.value, this.options[this.selectedIndex].text)">
+             <script>PrintDays(30)</script>
+           </select>  
+          </td>
+          <td width="10">&nbsp;</td>
+          <td class="copy" align="left"><nobr>&nbsp;<b>Departure: &nbsp;</b></nobr></td>
+          <td valign="top">
+            <input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type=text size=10 value="<TMPL_VAR NAME=CDATE_TO>" name="cdateTo" class="lemon" id="cdateTo">&nbsp;&nbsp;
+          </td>  
+          <td>
+            <a href="#" onClick="cal.select(document.getElementById('cdateTo'),'cdtt','dd-MM-yyyy'); return false;"><img src="/img/calendar.jpg" border=0 width="23" height="20"></a><a name="cdtt" id="cdtt"> </a>     
+          </td>
+        </tr>
+      </table>  
+
+     <br> 
+     <strong>Choose pax in room:</strong>&nbsp; <br>
+     <table cellspacing="0" cellpadding="0" border="0">
+     <tr>
+<!-- 
+      <td><img align="absmiddle" src="/img/1.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room1">&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/2.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room2">&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/3.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room3">&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/4.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room4">&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/1_1.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room11">&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/2_1.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room21">&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/2_2.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room22">&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/3_1.gif">&nbsp;<input <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> type="text" size="1" name="room31">&nbsp;&nbsp;</td>
+-->       
+       <td><img align="absmiddle" src="/img/1.gif">&nbsp;<input type="Radio"  size="1" name="room" value="1" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/2.gif">&nbsp;<input type="Radio"  size="1" name="room" value="2" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/3.gif">&nbsp;<input type="Radio"   size="1" name="room" value="3" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/4.gif">&nbsp;<input type="Radio"   size="1" name="room" value="4" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/1_1.gif">&nbsp;<input type="Radio"  size="1" name="room" value="11" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/2_1.gif">&nbsp;<input type="Radio"  size="1" name="room" value="21" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/2_2.gif">&nbsp;<input type="Radio"  size="1" name="room" value="22" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+       <td><img align="absmiddle" src="/img/3_1.gif">&nbsp;<input type="Radio"  size="1" name="room"  value="31" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>>&nbsp;&nbsp;</td>
+     </tr>
+     </table>
+
+     <br>
+     <b>Meal Plan</b>
+     <table cellspacing="0" cellpadding="0" style="border: 1px solid; border-color: #0868B0;">
+     <tr align="left">
+       <td valign="middle"><INPUT <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> title="Self Catering / Accommodation" name="ro" type="checkbox"></td>          
+       <td>Self Catering / Accommodation&nbsp;&nbsp;&nbsp;&nbsp;</td>  
+       <td valign="middle"><INPUT <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> title="Bed and Breakfast" name="bb" type="checkbox"></td>          
+       <td>Bed and Breakfast&nbsp;&nbsp;&nbsp;&nbsp;</td>  
+       <td valign="middle"><INPUT <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> title="Half Board" name="hb" type="checkbox"></td>
+       <td>Half Board&nbsp;&nbsp;&nbsp;&nbsp;</td>
+       <td valign="middle"><INPUT <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> title="Full Board" name="fb" type="checkbox"></td>
+       <td>Full Board&nbsp;&nbsp;&nbsp;&nbsp;</td>
+       <td valign="middle"><INPUT <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF> title="All Inclusive" name="ai" type="checkbox"></td>
+       <td>All Inclusive&nbsp;&nbsp;&nbsp;&nbsp;</td>
+       <td valign="middle"><INPUT title="check all" type="checkbox" name="allboards" onclick="CheckAllBoards(document.form1)" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>></td>
+       <td>Check all&nbsp;&nbsp;&nbsp;&nbsp;</td>
+     </tr>
+     </table>     
+
+     <table border="0" cellspacing="0" cellpadding="0" width="100%">
+     <tr>
+       <td width="500" valign="top">
+         <br>
+         <b>Category</b>
+         <table cellspacing="0" cellpadding="0" style="border: 1px solid; border-color: #0868B0;">
+         <tr align="left">
+           <td valign="middle"><INPUT title="All types of accomodation of 3 star or less" name="stars3" type="checkbox"></td>          
+           <td>3 stars or less&nbsp;&nbsp;&nbsp;&nbsp;</td>  
+           <td valign="middle"><INPUT title="All types of accomodation of 3 and 4 star" name="stars34" type="checkbox"></td>
+           <td>between 3 and 4 stars&nbsp;&nbsp;&nbsp;&nbsp;</td>
+           <td valign="middle"><INPUT title="All types of accomodation of 4 star or more" name="stars5" type="checkbox"></td>
+           <td>4 stars or more&nbsp;&nbsp;&nbsp;&nbsp;</td>
+           <td valign="middle"><INPUT title="check all" type="checkbox" name="allstars"  onclick="CheckAllStars(document.form1)" <TMPL_IF NAME=COUNTRY_ID><TMPL_ELSE> disabled</TMPL_IF>></td>
+           <td>Check all&nbsp;&nbsp;&nbsp;&nbsp;</td>
+         </tr>
+         </table>     
+       </td>
+
+       <td align="right" valign="top">
+         <input type="reset" class="buttonlogin" value="Reset">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <input type="button" class="buttonlogin" value="Search" onclick="javascript:MySubmit()"><img src="/img/ar.gif" alt="Book now" width="38" height="52" border="0" align="absmiddle">
+       </td>
+
+     </tr>  
+     </table>
+     <br>
+     <TMPL_INCLUDE NAME=../htdocs/inc/footer.inc>    
+  </td>
+</tr>
+</form>
+</table>
